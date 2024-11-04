@@ -9,22 +9,37 @@ function NavBar() {
   }
 
   return (
-    <nav className="min-h-full pt-28 flex justify-between items-center">
+    <nav
+      className={`flex ${
+        menu
+          ? "justify-center items-center "
+          : "flex justify-end items-center pt-28 mr-28"
+      }`}
+    >
       {/* Botão de menu mobile visível apenas em telas pequenas */}
       <span className="text-3xl cursor-pointer md:hidden mx-2 block">
         {menu ? (
-          <IoClose onClick={handleMenu} />
+          <IoClose
+            onClick={handleMenu}
+            className="absolute z-50 right-10 top-10"
+          />
         ) : (
-          <IoMenu onClick={handleMenu} />
+          <IoMenu
+            onClick={handleMenu}
+            className="absolute z-50 right-10 top-10"
+          />
         )}
       </span>
 
       {/* Menu que desaparece em telas maiores */}
       <ul
-        className={`list-none md:flex md:justify-center gap-10 items-center z-10 md:z-auto md:static absolute bg-rose-600 w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 ${
-          menu ? "opacity-100 top-0" : "opacity-0 top-[-400px]"
+        className={`list-none flex gap-2 items-center z-10 md:z-auto md:static absolute ${
+          menu
+            ? "opacity-100 top-0 flex-col h-full w-full bg-white z-90 gap-0 pt-52"
+            : "opacity-0 top-[-400px] justify-end"
         } transition-all ease-in duration-500 md:opacity-100 md:top-0 md:relative`}
       >
+        <li> </li>
         <li className="mx-4 my-6 md:my-0">
           <a href="">Inicio</a>
         </li>

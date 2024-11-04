@@ -6,7 +6,7 @@ function Header() {
       <img
         src="../public/VLK.png"
         alt="logomarca VLK"
-        className="w-72 absolute top-10 left-4 "
+        className="w-56 absolute top-10 left-4 "
       />
       <NavBar />
     </header>
