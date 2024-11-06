@@ -1,13 +1,6 @@
 import { IoClose, IoMenu } from "react-icons/io5";
-import { useState } from "react";
 
-function NavBar() {
-  const [menu, setCloseMenu] = useState(false);
-
-  function handleMenu() {
-    setCloseMenu(!menu);
-  }
-
+function NavBar({ menu, setCloseMenu, handleMenu }) {
   return (
     <nav
       className={`flex ${
