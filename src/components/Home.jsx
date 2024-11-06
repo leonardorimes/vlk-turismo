@@ -19,7 +19,7 @@ function Home() {
           setCloseMenu={setCloseMenu}
           handleMenu={handleMenu}
         />
-        <div className="sm:hidden md:block search flex justify-center mx-auto mt-20 gap-9 relative w-[30%] ">
+        <div className="sm:hidden md:block search flex justify-center mx-auto mt-20 gap-9 relative w-[80%] ">
           <Search className=" w-full h-14 rounded-xl shadow-lg outline-none p-8" />
 
           <Button className="  rounded-full bg-green-700 absolute  right-2  top-3 px-10 py-2 text-white flex items-center gap-2">
