@@ -2,8 +2,8 @@ import CardBeneficiosVlk from "./CardBeneficiosVlk";
 
 function Secao2() {
   return (
-    <div className="bg-[url('/public/IMG-SECTION.png')]  w-full  bg-center bg-contain bg-no-repeat h-screen mt-40">
-      <div className="bg-cover w-[80%] mx-auto my-0">
+    <div className="bg-[url('/public/IMG-SECTION.png')] bg-no-repeat bg-cover bg-center h-screen w-screen mt-40">
+      <div className=" w-[80%] mx-auto my-0">
         <div className="grid place-items-center w-full">
           <h1 className="font-bold text-4xl">Porque escolher a VLK?</h1>
 
