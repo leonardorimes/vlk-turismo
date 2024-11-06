@@ -12,7 +12,7 @@ function Home() {
   }
 
   return (
-    <div className="bg-[url('/public/BACKGROUND.png')] bg-no-repeat bg-cover">
+    <div className="bg-[url('/public/BACKGROUND.png')] bg-no-repeat bg-cover ">
       <div className="bg-cover w-[80%] mx-auto my-0">
         <Header
           menu={menu}

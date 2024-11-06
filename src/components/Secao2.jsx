@@ -2,7 +2,7 @@ import CardBeneficiosVlk from "./CardBeneficiosVlk";
 
 function Secao2() {
   return (
-    <div className="bg-[url('/public/IMG-SECTION.png')] bg-no-repeat bg-cover bg-center h-screen w-screen mt-40">
+    <div className="bg-[url('/public/IMG-SECTION.png')] bg-no-repeat bg-cover bg-center h-screen w-screen mt-40 ">
       <div className=" w-[80%] mx-auto my-0">
         <div className="grid place-items-center w-full">
           <h1 className="font-bold text-4xl">Porque escolher a VLK?</h1>
@@ -20,7 +20,7 @@ function Secao2() {
             autêntica e sem preocupações.
           </p>
         </div>
-        <div className=" flex mt-14 gap-20">
+        <div className="flex flex-col sm:flex-col md:flex-col xl:flex-row mt-14 gap-20">
           <CardBeneficiosVlk
             img="/public/destinos.png"
             title="Multiplos Destinos"

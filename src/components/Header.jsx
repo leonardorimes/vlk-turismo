@@ -2,7 +2,7 @@ import NavBar from "./NavBar";
 
 function Header({ menu, setCloseMenu, handleMenu }) {
   return (
-    <header className="w-[80%] mx-auto my-0">
+    <header className="w-[80%] mx-auto my-0 overflow-hidden">
       <img
         src="../public/VLK.png"
         alt="logomarca VLK"
