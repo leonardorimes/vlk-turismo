@@ -1,7 +1,7 @@
-import Card from "./components/Card";
 import Home from "./components/Home";
+import Internacionais from "./components/Internacionais";
 import Secao2 from "./components/Secao2";
-
+import Nacionais from "./components/Nacionais";
 /*Embla Caarousel */
 
 function App() {
@@ -10,12 +10,8 @@ function App() {
       <Home />
       <Secao2 />
 
-      <Card
-        title="Rio"
-        subtitle="Rio de Janeiro"
-        price="R$ 2.500,00"
-        img="../public/rio.jpeg"
-      />
+      <Internacionais />
+      <Nacionais />
     </>
   );
 }
