@@ -6,11 +6,11 @@ function NavBar({ menu, setCloseMenu, handleMenu }) {
       className={`flex ${
         menu
           ? "justify-center items-center "
-          : "flex justify-end items-center pt-28 mr-28"
+          : "flex justify-end items-center pt-20 mr-28"
       }`}
     >
       {/* Botão de menu mobile visível apenas em telas pequenas */}
-      <span className="text-3xl cursor-pointer md:hidden mx-2 block">
+      <span className="text-3xl cursor-pointer md:hidden mx-2 w-full block">
         {menu ? (
           <IoClose
             onClick={handleMenu}
@@ -28,7 +28,7 @@ function NavBar({ menu, setCloseMenu, handleMenu }) {
       <ul
         className={`list-none flex gap-2 items-center z-10 md:z-auto md:static absolute ${
           menu
-            ? "opacity-100 top-0 flex-col h-full w-full bg-white z-90 gap-0 pt-52"
+            ? "opacity-100 top-0 flex-col h-full w-full bg-white z-90 gap-0 "
             : "opacity-0 top-[-400px] justify-end"
         } transition-all ease-in duration-500 md:opacity-100 md:top-0 md:relative`}
       >

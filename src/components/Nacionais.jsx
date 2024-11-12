@@ -6,12 +6,12 @@ import Card from "./Card";
 function Internacionais() {
   const settings = {
     dots: false,
-    infinite: false,
+    infinite: true,
     speed: 200,
-    slidesToShow: 5,
-    slidesToScroll: 3,
+    slidesToShow: 4,
+    slidesToScroll: 1,
     initialSlide: 0,
-    variableWidth: true,
+    arrows: false,
 
     responsive: [
       {

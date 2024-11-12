@@ -18,3 +18,8 @@
 .slide1 {
   width: 1px !important;
 }
+.slick-prev:before,
+.slick-next:before {
+  font-family: initial;
+  color: black !important;
+}

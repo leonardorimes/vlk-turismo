@@ -6,7 +6,7 @@ function Header({ menu, setCloseMenu, handleMenu }) {
       <img
         src="../public/VLK.png"
         alt="logomarca VLK"
-        className="w-56 absolute top-10 left-15 "
+        className="w-36 absolute top-10 left-15 "
       />
       <NavBar menu={menu} setCloseMenu={setCloseMenu} handleMenu={handleMenu} />
     </header>

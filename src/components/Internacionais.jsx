@@ -6,29 +6,29 @@ import Card from "./Card";
 function Internacionais() {
   const settings = {
     dots: false,
-    infinite: false,
+    infinite: true,
     speed: 200,
-    slidesToShow: 5,
-    slidesToScroll: 3,
+    slidesToShow: 4,
+    slidesToScroll: 1,
     initialSlide: 0,
-    variableWidth: true,
-
+    arrows: false,
     responsive: [
       {
         breakpoint: 1024,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 1,
+          slidesToScroll: 3,
           infinite: true,
           dots: true,
+          arrows: false,
         },
       },
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          initialSlide: 0,
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
         },
       },
       {
@@ -91,12 +91,18 @@ function Internacionais() {
       price: "R$ 2.500,00",
       img: "../public/rio.jpeg",
     },
+    {
+      title: "Rio",
+      subtitle: "Rio de Janeiro",
+      price: "R$ 2.500,00",
+      img: "../public/rio.jpeg",
+    },
   ];
 
   return (
-    <div className="lg:mt-[600px] xl:-mt-8 md:mt-[600px] sm:mt-[680px] h-full w-full">
+    <div className="lg:mt-[600px] xl:-mt-8 md:mt-[600px] sm:mt-[680px]  w-full">
       <div className="grid place-items-center">
-        <h1 className="text-4xl font-bold">Destinos Internacionais</h1>
+        <h1 className="text-4xl font-bold ">Destinos Internacionais</h1>
         <p className="text-center mt-4 w-[50%]">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta, amet
           vel. Doloremque maiores voluptatem consequatur enim suscipit dolor,
@@ -106,7 +112,7 @@ function Internacionais() {
       </div>
       <div className="mt-16">
         <Slider {...settings}>
-          <div className="slide1"></div>
+          <div className="slide1 "></div>
 
           {cardData.map((card, index) => (
             <Card

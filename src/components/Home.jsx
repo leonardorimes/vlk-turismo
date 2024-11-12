@@ -28,7 +28,7 @@ function Home() {
         </div>
         <div className="flex sm:flex-col-reverse lg:flex-row sm:items-center  justify-center gap-24 mt-28 w-full">
           <div className="w-[450px]">
-            <h1 className="text-5xl font-bold mb-6">
+            <h1 className="text-4xl font-bold mb-6">
               Descubra o mundo com a VLK!
             </h1>
             <p className="mb-6">
