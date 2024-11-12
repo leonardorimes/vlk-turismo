@@ -37,7 +37,7 @@ function Depoimentos() {
   };
 
   return (
-    <div className="mt-32 flex w-full gap-6 z-[9999] justify-center items-center">
+    <div className="mt-32 flex w-full gap-6 z-[9999] justify-center items-center md:flex-col sm:flex-col lg:flex-row">
       <div className="w-1/2">
         <h1 className="text-4xl font-bold mb-4">
           Recomendados por mais de <br /> 5.000 clientes!

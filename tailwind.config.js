@@ -6,6 +6,9 @@ export default {
       backgroundImage: {
         teladefundo: "url('./public/BACKGROUND.png')",
       },
+      screens: {
+        xs: { max: "639px" }, // Aplica-se a telas menores que 640px
+      },
     },
   },
   plugins: [],
