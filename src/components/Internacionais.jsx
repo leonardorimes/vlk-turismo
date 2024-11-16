@@ -100,7 +100,7 @@ function Internacionais() {
   ];
 
   return (
-    <div className="lg:mt-[600px] xl:-mt-8 md:mt-[600px] sm:mt-[680px]  w-full">
+    <div className=" xl:-mt-8 md:mt-[800px] sm:mt-[900px] mt-4 w-full">
       <div className="grid place-items-center">
         <h1 className="text-4xl font-bold ">Destinos Internacionais</h1>
         <p className="text-center mt-4 w-[50%]">
