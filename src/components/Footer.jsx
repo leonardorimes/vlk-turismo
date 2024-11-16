@@ -9,16 +9,16 @@ function Footer() {
           <img
             src="../public/VLK.png"
             alt="logomarca VLK"
-            className="w-full w-44 "
+            className="w-full w-28"
           />
         </div>
         <div className="social flex gap-10">
           <a href="https://www.instagram.com/vlkturismo/" target="_blank">
-            <AiFillInstagram className="text-green-900 text-3xl" />
+            <AiFillInstagram className="text-green-900 text-2xl" />
           </a>
 
           <a href="">
-            <FaFacebook className="text-green-900 text-3xl" />
+            <FaFacebook className="text-green-900 text-2xl" />
           </a>
         </div>
       </div>
