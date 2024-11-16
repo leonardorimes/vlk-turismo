@@ -11,7 +11,7 @@ function Internacionais() {
     slidesToShow: 3,
     slidesToScroll: 1,
     initialSlide: 0,
-    arrows: false,
+    arrows: true,
 
     responsive: [
       {
@@ -31,6 +31,7 @@ function Internacionais() {
           slidesToScroll: 1,
           initialSlide: 2,
           dots: false,
+          arrows: true,
         },
       },
       {
@@ -40,6 +41,7 @@ function Internacionais() {
           slidesToScroll: 1,
           initialSlide: 2,
           dots: false,
+          arrows: true,
         },
       },
     ],
@@ -104,7 +106,7 @@ function Internacionais() {
   ];
 
   return (
-    <div className="lg:mt-[600px] xl:-mt-8 md:mt-[600px] sm:mt-[680px]  w-full">
+    <div className="lg:mt-[600px] xl:-mt-8 md:mt-[600px] xs:mt-[1100px]  w-full">
       <div className="grid place-items-center">
         <h1 className="text-4xl font-bold ">Destinos Internacionais</h1>
         <p className="text-center mt-4 w-[50%]">
