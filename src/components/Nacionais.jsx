@@ -5,10 +5,10 @@ import Card from "./Card";
 
 function Internacionais() {
   const settings = {
-    dots: false,
+    dots: true,
     infinite: true,
     speed: 200,
-    slidesToShow: 4,
+    slidesToShow: 3,
     slidesToScroll: 1,
     initialSlide: 0,
     arrows: false,
@@ -20,7 +20,8 @@ function Internacionais() {
           slidesToShow: 2,
           slidesToScroll: 1,
           infinite: true,
-          dots: true,
+          initialSlide: 1,
+          dots: false,
         },
       },
       {
@@ -28,7 +29,8 @@ function Internacionais() {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          initialSlide: 0,
+          initialSlide: 2,
+          dots: false,
         },
       },
       {
@@ -36,6 +38,8 @@ function Internacionais() {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          initialSlide: 2,
+          dots: false,
         },
       },
     ],
@@ -106,8 +110,6 @@ function Internacionais() {
       </div>
       <div className="mt-16 ">
         <Slider {...settings}>
-          <div className="slide1"></div>
-
           {cardData.map((card, index) => (
             <Card
               key={index}

@@ -5,30 +5,32 @@ import Card from "./Card";
 
 function Internacionais() {
   const settings = {
-    dots: false,
+    dots: true,
     infinite: true,
     speed: 200,
-    slidesToShow: 4,
+    slidesToShow: 3,
     slidesToScroll: 1,
     initialSlide: 0,
     arrows: false,
+
     responsive: [
       {
         breakpoint: 1024,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 3,
+          slidesToScroll: 1,
           infinite: true,
-          dots: true,
-          arrows: false,
+          initialSlide: 1,
+          dots: false,
         },
       },
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
+          slidesToShow: 1,
+          slidesToScroll: 1,
           initialSlide: 2,
+          dots: false,
         },
       },
       {
@@ -36,6 +38,8 @@ function Internacionais() {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          initialSlide: 2,
+          dots: false,
         },
       },
     ],
@@ -100,7 +104,7 @@ function Internacionais() {
   ];
 
   return (
-    <div className=" xl:-mt-8 md:mt-[800px] sm:mt-[900px] mt-4 w-full">
+    <div className="lg:mt-[600px] xl:-mt-8 md:mt-[600px] sm:mt-[680px]  w-full">
       <div className="grid place-items-center">
         <h1 className="text-4xl font-bold ">Destinos Internacionais</h1>
         <p className="text-center mt-4 w-[50%]">
@@ -112,8 +116,6 @@ function Internacionais() {
       </div>
       <div className="mt-16">
         <Slider {...settings}>
-          <div className="slide1 "></div>
-
           {cardData.map((card, index) => (
             <Card
               key={index}

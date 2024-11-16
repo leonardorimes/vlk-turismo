@@ -4,6 +4,7 @@ import Secao2 from "./components/Secao2";
 import Nacionais from "./components/Nacionais";
 import Depoimentos from "./components/Depoimentos";
 import Whats from "./components/whats";
+import Footer from "./components/Footer";
 /*Embla Caarousel */
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
       <Internacionais />
       <Nacionais />
       <Depoimentos />
+      <Footer />
       <Whats />
     </>
   );
