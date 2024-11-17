@@ -1,23 +1,30 @@
-import Home from "./components/Home";
-import Internacionais from "./components/Internacionais";
-import Secao2 from "./components/Secao2";
-import Nacionais from "./components/Nacionais";
-import Depoimentos from "./components/Depoimentos";
-import Whats from "./components/whats";
-import Footer from "./components/Footer";
 /*Embla Caarousel */
+
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Layout from "./components/Layout";
+import Home from "./components/Home";
+import FormLogin from "./components/FormLogin";
 
 function App() {
   return (
     <>
-      <Home />
-      <Secao2 />
+      {/* <Home />
+     
 
-      <Internacionais />
+      
       <Nacionais />
       <Depoimentos />
       <Footer />
-      <Whats />
+      <Whats /> */}
+
+      <Router>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="login" element={<FormLogin />} />
+          </Route>
+        </Routes>
+      </Router>
     </>
   );
 }
