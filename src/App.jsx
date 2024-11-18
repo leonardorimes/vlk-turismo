@@ -5,6 +5,7 @@ import Layout from "./components/Layout";
 import Home from "./components/Home";
 import FormLogin from "./components/FormLogin";
 import CadastroPacote from "./components/CadastroPacote";
+import TabelaPacotes from "./components/TabelaPacotes";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
             <Route index element={<Home />} />
             <Route path="login" element={<FormLogin />} />
             <Route path="cadastroPacote" element={<CadastroPacote />} />
+            <Route path="tabelaPacotes" element={<TabelaPacotes />} />
           </Route>
         </Routes>
       </Router>
