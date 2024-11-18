@@ -17,6 +17,7 @@ function App() {
             <Route path="login" element={<FormLogin />} />
             <Route path="cadastroPacote" element={<CadastroPacote />} />
             <Route path="tabelaPacotes" element={<TabelaPacotes />} />
+            <Route path="formLogin" element={<formLogin />} />
           </Route>
         </Routes>
       </Router>
