@@ -2,8 +2,11 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Card from "./Card";
+import { useEffect, useState } from "react";
 
-function Internacionais() {
+import { getCardData } from "../utils/bancoPacotes";
+
+function Nacionais() {
   const settings = {
     dots: true,
     infinite: true,
@@ -45,57 +48,63 @@ function Internacionais() {
     ],
   };
 
+  const [cardData, setCardData] = useState([]);
+
+  useEffect(() => {
+    getCardData("false", setCardData);
+  }, []);
+
   // Dados dos cartões
-  const cardData = [
-    {
-      title: "Rio",
-      subtitle: "Rio de Janeiro",
-      price: "R$ 2.500,00",
-      img: "../public/rio.jpeg",
-    },
-    {
-      title: "Rio",
-      subtitle: "Rio de Janeiro",
-      price: "R$ 2.500,00",
-      img: "../public/rio.jpeg",
-    },
-    {
-      title: "Rio",
-      subtitle: "Rio de Janeiro",
-      price: "R$ 2.500,00",
-      img: "../public/rio.jpeg",
-    },
-    {
-      title: "Rio",
-      subtitle: "Rio de Janeiro",
-      price: "R$ 2.500,00",
-      img: "../public/rio.jpeg",
-    },
-    {
-      title: "Rio",
-      subtitle: "Rio de Janeiro",
-      price: "R$ 2.500,00",
-      img: "../public/rio.jpeg",
-    },
-    {
-      title: "Rio",
-      subtitle: "Rio de Janeiro",
-      price: "R$ 2.500,00",
-      img: "../public/rio.jpeg",
-    },
-    {
-      title: "Rio",
-      subtitle: "Rio de Janeiro",
-      price: "R$ 2.500,00",
-      img: "../public/rio.jpeg",
-    },
-    {
-      title: "Rio",
-      subtitle: "Rio de Janeiro",
-      price: "R$ 2.500,00",
-      img: "../public/rio.jpeg",
-    },
-  ];
+  // const cardData = [
+  //   {
+  //     title: "Rio",
+  //     subtitle: "Rio de Janeiro",
+  //     price: "R$ 2.500,00",
+  //     img: "../public/rio.jpeg",
+  //   },
+  //   {
+  //     title: "Rio",
+  //     subtitle: "Rio de Janeiro",
+  //     price: "R$ 2.500,00",
+  //     img: "../public/rio.jpeg",
+  //   },
+  //   {
+  //     title: "Rio",
+  //     subtitle: "Rio de Janeiro",
+  //     price: "R$ 2.500,00",
+  //     img: "../public/rio.jpeg",
+  //   },
+  //   {
+  //     title: "Rio",
+  //     subtitle: "Rio de Janeiro",
+  //     price: "R$ 2.500,00",
+  //     img: "../public/rio.jpeg",
+  //   },
+  //   {
+  //     title: "Rio",
+  //     subtitle: "Rio de Janeiro",
+  //     price: "R$ 2.500,00",
+  //     img: "../public/rio.jpeg",
+  //   },
+  //   {
+  //     title: "Rio",
+  //     subtitle: "Rio de Janeiro",
+  //     price: "R$ 2.500,00",
+  //     img: "../public/rio.jpeg",
+  //   },
+  //   {
+  //     title: "Rio",
+  //     subtitle: "Rio de Janeiro",
+  //     price: "R$ 2.500,00",
+  //     img: "../public/rio.jpeg",
+  //   },
+  //   {
+  //     title: "Rio",
+  //     subtitle: "Rio de Janeiro",
+  //     price: "R$ 2.500,00",
+  //     img: "../public/rio.jpeg",
+  //   },
+  // ];
 
   return (
     <div className="mt-20">
@@ -113,10 +122,10 @@ function Internacionais() {
           {cardData.map((card, index) => (
             <Card
               key={index}
-              title={card.title}
-              subtitle={card.subtitle}
-              price={card.price}
-              img={card.img}
+              title={card.Pacote}
+              subtitle={card.Destino}
+              price={card.Valor}
+              img={card.imagem}
             />
           ))}
         </Slider>
@@ -125,4 +134,4 @@ function Internacionais() {
   );
 }
 
-export default Internacionais;
+export default Nacionais;
