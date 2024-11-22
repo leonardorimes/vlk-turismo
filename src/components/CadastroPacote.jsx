@@ -1,26 +1,64 @@
 import { useState } from "react";
 import Button from "./Button";
+import { insertCardData } from "../utils/bancoPacotes";
 
 function CadastroPacote() {
-  const [selectedOption, setSelectedOption] = useState(""); // Gerencia o estado do radio button
+  const [formData, setFormData] = useState({
+    pacote: "",
+    destino: "",
+    valor: "",
+    imagem: null, // Inicialmente null para armazenar a imagem
+    internacional: false, // Campo que será true se o checkbox "Internacional" for marcado
+  });
 
+  // Função para lidar com mudanças nos campos de entrada
   const handleChange = (event) => {
-    setSelectedOption(event.target.value); // Atualiza o estado com a opção selecionada
+    const { name, value, type, checked, files } = event.target;
+
+    // Se o campo for do tipo "checkbox", o valor será booleano
+    if (type === "checkbox") {
+      setFormData((prevData) => ({
+        ...prevData,
+        [name]: checked, // Atualiza para true ou false baseado no estado do checkbox
+      }));
+    } else if (type === "file") {
+      setFormData((prevData) => ({
+        ...prevData,
+        [name]: files[0], // Armazena o arquivo selecionado
+      }));
+    } else {
+      setFormData((prevData) => ({
+        ...prevData,
+        [name]: value, // Para inputs de texto
+      }));
+    }
   };
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    console.log(formData);
+    insertCardData(formData);
+  }
 
   return (
     <div className="w-[90%] mx-auto my-0 mt-20 bg-green-800 pb-12 rounded flex flex-col">
       <h1 className="text-center mt-3 text-3xl font-bold text-yellow-500">
         Cadastre seu pacote
       </h1>
-      <form className="flex flex-col items-center justify-center gap-12 mt-14 w-full">
+      <form
+        onSubmit={handleSubmit}
+        className="flex flex-col items-center justify-center gap-12 mt-14 w-full"
+      >
         {/* Campo Pacote */}
         <label className="w-[80%] flex gap-5 items-center justify-center">
           <span className="text-2xl text-yellow-500 font-bold">Pacote :</span>
           <input
             type="text"
+            name="pacote"
             className="w-[50%] h-11 rounded p-2"
             placeholder="Digite o nome do pacote"
+            value={formData.pacote}
+            onChange={handleChange}
           />
         </label>
 
@@ -29,8 +67,11 @@ function CadastroPacote() {
           <span className="text-2xl text-yellow-500 font-bold">Destino :</span>
           <input
             type="text"
+            name="destino"
             className="w-[50%] h-11 rounded p-2"
             placeholder="Digite o destino"
+            value={formData.destino}
+            onChange={handleChange}
           />
         </label>
 
@@ -39,8 +80,11 @@ function CadastroPacote() {
           <span className="text-2xl text-yellow-500 font-bold">Valor :</span>
           <input
             type="number"
+            name="valor"
             className="w-[50%] h-11 rounded p-2"
             placeholder="Digite o valor"
+            value={formData.valor}
+            onChange={handleChange}
           />
         </label>
 
@@ -49,43 +93,27 @@ function CadastroPacote() {
           <span className="text-2xl text-yellow-500 font-bold">Imagem:</span>
           <input
             type="file"
+            name="imagem"
             className="w-[50%] h-11 rounded p-2"
-            placeholder="Envie a imagem"
+            onChange={handleChange}
           />
         </label>
 
-        {/* Radio Buttons */}
-        <div className="flex gap-5 items-center mt-6">
-          <label className="flex items-center gap-2">
-            <input
-              type="radio"
-              name="tipo"
-              value="internacional"
-              checked={selectedOption === "internacional"}
-              onChange={handleChange}
-              className="w-5 h-5 rounded-full"
-            />
-            <span className="text-lg">Internacional</span>
-          </label>
-
-          <label className="flex items-center gap-2">
-            <input
-              type="radio"
-              name="tipo"
-              value="nacional"
-              checked={selectedOption === "nacional"}
-              onChange={handleChange}
-              className="w-5 h-5 rounded-full"
-            />
-            <span className="text-lg">Nacional</span>
-          </label>
+        {/* Checkbox para Internacional */}
+        <div className="flex items-center gap-3 mt-6">
+          <input
+            type="checkbox"
+            name="internacional"
+            checked={formData.internacional}
+            onChange={handleChange}
+            className="w-5 h-5 rounded"
+          />
+          <span className="text-lg">Marque se for Internacional</span>
         </div>
 
         {/* Exibição da opção selecionada */}
         <div className="mt-4">
-          <p>
-            Opção selecionada: {selectedOption ? selectedOption : "Nenhuma"}
-          </p>
+          <p>Tipo: {formData.internacional ? "Internacional" : "Nacional"}</p>
         </div>
 
         {/* Botão */}

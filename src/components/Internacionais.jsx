@@ -2,6 +2,8 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Card from "./Card";
+import { getCardData } from "../utils/bancoPacotes";
+import { useEffect, useState } from "react";
 
 function Internacionais() {
   const settings = {
@@ -47,63 +49,11 @@ function Internacionais() {
     ],
   };
 
-  // Dados dos cartões
-  const cardData = [
-    {
-      title: "Rio",
-      subtitle: "Rio de Janeiro",
-      price: "R$ 2.500,00",
-      img: "../public/rio.jpeg",
-    },
-    {
-      title: "Rio",
-      subtitle: "Rio de Janeiro",
-      price: "R$ 2.500,00",
-      img: "../public/rio.jpeg",
-    },
-    {
-      title: "Rio",
-      subtitle: "Rio de Janeiro",
-      price: "R$ 2.500,00",
-      img: "../public/rio.jpeg",
-    },
-    {
-      title: "Rio",
-      subtitle: "Rio de Janeiro",
-      price: "R$ 2.500,00",
-      img: "../public/rio.jpeg",
-    },
-    {
-      title: "Rio",
-      subtitle: "Rio de Janeiro",
-      price: "R$ 2.500,00",
-      img: "../public/rio.jpeg",
-    },
-    {
-      title: "Rio",
-      subtitle: "Rio de Janeiro",
-      price: "R$ 2.500,00",
-      img: "../public/rio.jpeg",
-    },
-    {
-      title: "Rio",
-      subtitle: "Rio de Janeiro",
-      price: "R$ 2.500,00",
-      img: "../public/rio.jpeg",
-    },
-    {
-      title: "Rio",
-      subtitle: "Rio de Janeiro",
-      price: "R$ 2.500,00",
-      img: "../public/rio.jpeg",
-    },
-    {
-      title: "Rio",
-      subtitle: "Rio de Janeiro",
-      price: "R$ 2.500,00",
-      img: "../public/rio.jpeg",
-    },
-  ];
+  const [cardData, setCardData] = useState([]);
+
+  useEffect(() => {
+    getCardData("true", setCardData);
+  }, []);
 
   return (
     <div className="lg:mt-[600px] xl:-mt-8 md:mt-[600px] xs:mt-[1100px]  w-full">
@@ -121,10 +71,10 @@ function Internacionais() {
           {cardData.map((card, index) => (
             <Card
               key={index}
-              title={card.title}
-              subtitle={card.subtitle}
-              price={card.price}
-              img={card.img}
+              title={card.Pacote}
+              subtitle={card.Destino}
+              price={card.Valor}
+              img={card.imagen}
             />
           ))}
         </Slider>

@@ -125,7 +125,7 @@ function Nacionais() {
               title={card.Pacote}
               subtitle={card.Destino}
               price={card.Valor}
-              img={card.imagem}
+              img={card.imagen}
             />
           ))}
         </Slider>
