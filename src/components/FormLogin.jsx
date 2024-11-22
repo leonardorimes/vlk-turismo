@@ -29,10 +29,10 @@ function FormLogin() {
         password: formData.password,
       });
       if (error) throw error;
-      navigate("/tabelaPacotes");
     } catch (error) {
       alert(error);
     }
+    navigate("/tabelaPacotes");
   }
 
   return (

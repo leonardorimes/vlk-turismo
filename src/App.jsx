@@ -15,6 +15,7 @@ function App() {
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="login" element={<FormLogin />} />
+
             <Route path="cadastroPacote" element={<CadastroPacote />} />
             <Route path="tabelaPacotes" element={<TabelaPacotes />} />
           </Route>

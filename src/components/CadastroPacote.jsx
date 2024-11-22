@@ -1,44 +1,51 @@
 import { useState } from "react";
 import Button from "./Button";
 import { insertCardData } from "../utils/bancoPacotes";
+import { useNavigate } from "react-router-dom"; // Certifique-se de importar o useNavigate
 
 function CadastroPacote() {
   const [formData, setFormData] = useState({
     pacote: "",
     destino: "",
     valor: "",
-    imagem: null, // Inicialmente null para armazenar a imagem
-    internacional: false, // Campo que será true se o checkbox "Internacional" for marcado
+    imagem: null,
+    internacional: false,
   });
 
-  // Função para lidar com mudanças nos campos de entrada
+  const navigate = useNavigate(); // Inicializa o navigate
+
   const handleChange = (event) => {
     const { name, value, type, checked, files } = event.target;
 
-    // Se o campo for do tipo "checkbox", o valor será booleano
     if (type === "checkbox") {
       setFormData((prevData) => ({
         ...prevData,
-        [name]: checked, // Atualiza para true ou false baseado no estado do checkbox
+        [name]: checked,
       }));
     } else if (type === "file") {
       setFormData((prevData) => ({
         ...prevData,
-        [name]: files[0], // Armazena o arquivo selecionado
+        [name]: files[0],
       }));
     } else {
       setFormData((prevData) => ({
         ...prevData,
-        [name]: value, // Para inputs de texto
+        [name]: value,
       }));
     }
   };
 
-  function handleSubmit(e) {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(formData);
-    insertCardData(formData);
-  }
+
+    // Aguarde o retorno da função de inserção
+    await insertCardData(formData);
+
+    // Redireciona para a página após a inserção
+    console.log("Redirecionando para /tabelaPacotes...");
+    navigate("/tabelaPacotes"); // Realiza o redirecionamento
+  };
 
   return (
     <div className="w-[90%] mx-auto my-0 mt-20 bg-green-800 pb-12 rounded flex flex-col">
@@ -49,7 +56,6 @@ function CadastroPacote() {
         onSubmit={handleSubmit}
         className="flex flex-col items-center justify-center gap-12 mt-14 w-full"
       >
-        {/* Campo Pacote */}
         <label className="w-[80%] flex gap-5 items-center justify-center">
           <span className="text-2xl text-yellow-500 font-bold">Pacote :</span>
           <input
@@ -62,7 +68,6 @@ function CadastroPacote() {
           />
         </label>
 
-        {/* Campo Destino */}
         <label className="w-[80%] flex gap-5 items-center justify-center">
           <span className="text-2xl text-yellow-500 font-bold">Destino :</span>
           <input
@@ -75,7 +80,6 @@ function CadastroPacote() {
           />
         </label>
 
-        {/* Campo Valor */}
         <label className="w-[80%] flex gap-5 items-center justify-center">
           <span className="text-2xl text-yellow-500 font-bold">Valor :</span>
           <input
@@ -88,7 +92,6 @@ function CadastroPacote() {
           />
         </label>
 
-        {/* Campo Imagem */}
         <label className="w-[80%] flex gap-5 items-center justify-center">
           <span className="text-2xl text-yellow-500 font-bold">Imagem:</span>
           <input
@@ -99,7 +102,6 @@ function CadastroPacote() {
           />
         </label>
 
-        {/* Checkbox para Internacional */}
         <div className="flex items-center gap-3 mt-6">
           <input
             type="checkbox"
@@ -111,12 +113,10 @@ function CadastroPacote() {
           <span className="text-lg">Marque se for Internacional</span>
         </div>
 
-        {/* Exibição da opção selecionada */}
         <div className="mt-4">
           <p>Tipo: {formData.internacional ? "Internacional" : "Nacional"}</p>
         </div>
 
-        {/* Botão */}
         <Button className="rounded-full bg-green-700 px-10 py-2 text-white flex mt-8">
           Enviar
         </Button>

@@ -15,6 +15,10 @@ export async function getCardData(eInternacional, setCardData) {
   }
 }
 
+export function resetPage() {
+  window.location.reload();
+}
+
 function sanitizeFileName(fileName) {
   return fileName
     .toLowerCase()
@@ -63,10 +67,33 @@ export async function insertCardData(item) {
     if (error) throw error;
 
     console.log("Dados inseridos com sucesso:", data);
+    // Redirecionando após a inserção bem-sucedida
+
     return data;
   } catch (error) {
     console.error("Erro na função insertCardData:", error);
     alert("Erro ao inserir dados: " + error.message);
     return null;
+  }
+}
+
+export async function deleteData(Pacoteid) {
+  try {
+    const { data, error } = await supabase
+      .from("pacotes") // Verifique o nome exato da tabela no Supabase
+      .delete()
+      .eq("id", Pacoteid);
+    resetPage();
+
+    if (error) {
+      console.error("Erro ao deletar:", error.message);
+      alert("Erro ao deletar pacote.");
+      return;
+    }
+
+    alert("Pacote deletado com sucesso!");
+    console.log("Dados deletados:", data);
+  } catch (error) {
+    console.error("Erro inesperado:", error);
   }
 }
