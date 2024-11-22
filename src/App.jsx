@@ -6,10 +6,11 @@ import Home from "./components/Home";
 import FormLogin from "./components/FormLogin";
 import CadastroPacote from "./components/CadastroPacote";
 import TabelaPacotes from "./components/TabelaPacotes";
+import { AuthProvider } from "./contexts/AuthContext";
 
 function App() {
   return (
-    <>
+    <AuthProvider>
       <Router>
         <Routes>
           <Route path="/" element={<Layout />}>
@@ -21,7 +22,7 @@ function App() {
           </Route>
         </Routes>
       </Router>
-    </>
+    </AuthProvider>
   );
 }
 
