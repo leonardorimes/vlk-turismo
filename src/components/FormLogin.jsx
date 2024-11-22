@@ -2,6 +2,7 @@ import { useState } from "react";
 import Button from "./Button";
 import { supabase } from "./Client";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "./AuthContext"; // Importando o contexto
 
 function FormLogin() {
   const [formData, setFormData] = useState({
@@ -9,7 +10,7 @@ function FormLogin() {
     password: "",
   });
 
-  console.log(formData);
+  const { login } = useAuth(); // Acessando a função login do contexto
   const navigate = useNavigate();
 
   function handleChange(e) {
@@ -24,21 +25,25 @@ function FormLogin() {
   async function handleSubmit(e) {
     e.preventDefault();
     try {
-      const { error } = await supabase.auth.signInWithPassword({
+      const { user, error } = await supabase.auth.signInWithPassword({
         email: formData.email,
         password: formData.password,
       });
-      if (error) throw error;
+
+      if (error) throw error; // Se houver erro, lança a exceção
+
+      // Se o login for bem-sucedido, atualiza o estado de autenticação
+      login(user);
+
+      navigate("/tabelaPacotes"); // Redireciona para a página de pacotes após o login
     } catch (error) {
-      alert(error);
+      alert(error.message); // Exibe o erro se ocorrer
     }
-    navigate("/tabelaPacotes");
   }
 
   return (
     <div className="w-[90%] mx-auto my-0  mt-20 bg-green-800 pb-12  rounded flex flex-col">
       <h1 className="text-center mt-3 text-3xl font-bold text-yellow-500">
-        {" "}
         Login!
       </h1>
       <form
@@ -52,6 +57,7 @@ function FormLogin() {
             className="w-[50%] h-11 rounded p-2"
             placeholder="Digite seu email"
             name="email"
+            value={formData.email}
             onChange={handleChange}
           />
         </label>
@@ -62,6 +68,7 @@ function FormLogin() {
             className="w-[50%] h-11 rounded p-2"
             placeholder="Digite sua senha"
             name="password"
+            value={formData.password}
             onChange={handleChange}
           />
         </label>

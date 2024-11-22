@@ -6,7 +6,7 @@ import Home from "./components/Home";
 import FormLogin from "./components/FormLogin";
 import CadastroPacote from "./components/CadastroPacote";
 import TabelaPacotes from "./components/TabelaPacotes";
-import { AuthProvider } from "./contexts/AuthContext";
+import { AuthProvider } from "./components/AuthContext";
 
 function App() {
   return (
