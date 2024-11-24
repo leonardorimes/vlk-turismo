@@ -107,7 +107,7 @@ function Nacionais() {
   // ];
 
   return (
-    <div className="mt-20">
+    <div className="mt-20" >
       <div className="grid place-items-center">
         <h1 className="text-4xl font-bold"> Destinos Nacionais</h1>
         <p className="text-center mt-4 w-[50%]">

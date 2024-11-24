@@ -1,11 +1,13 @@
 import { IoClose, IoMenu } from "react-icons/io5";
+import { Link } from "react-router-dom";
+import { Link as ScrollLink } from "react-scroll"; // Mudança aqui, para evitar conflito com o 'Link' do react-router-dom
 
 function NavBar({ menu, setCloseMenu, handleMenu }) {
   return (
     <nav
       className={`flex ${
         menu
-          ? "justify-center items-center "
+          ? "justify-center items-center"
           : "flex justify-end items-center pt-20 mr-28"
       }`}
     >
@@ -28,25 +30,27 @@ function NavBar({ menu, setCloseMenu, handleMenu }) {
       <ul
         className={`list-none flex gap-2 items-center z-10 md:z-auto md:static absolute ${
           menu
-            ? "opacity-100 top-0 flex-col h-full w-full bg-white z-90 gap-0 "
+            ? "opacity-100 top-0 flex-col h-full w-full bg-white z-90 gap-0"
             : "opacity-0 top-[-400px] justify-end"
         } transition-all ease-in duration-500 md:opacity-100 md:top-0 md:relative`}
       >
-        <li> </li>
-        <li className="mx-4 my-6 md:my-0">
-          <a href="">Inicio</a>
+        <li className="mx-4 my-6 md:my-0 cursor-pointer">
+          <Link to="/">Inicio</Link>
         </li>
-        <li className="mx-4 my-6 md:my-0">
-          <a href="">Destinos</a>
+        <li className="mx-4 my-6 md:my-0 cursor-pointer">
+          <ScrollLink to="secao2" smooth={true} duration={800}>
+            Destinos
+          </ScrollLink>
         </li>
-        <li className="mx-4 my-6 md:my-0">
-          <a href="">Pacotes</a>
+        <li className="mx-4 my-6 md:my-0 cursor-pointer">
+          <ScrollLink to="Pacotes" smooth={true} duration={1000}>
+            Pacotes
+          </ScrollLink>
         </li>
-        <li className="mx-4 my-6 md:my-0">
-          <a href="">Clientes</a>
-        </li>
-        <li className="mx-4 my-6 md:my-0">
-          <a href="">Contato</a>
+        <li className="mx-4 my-6 md:my-0 cursor-pointer">
+          <ScrollLink to="Clientes" smooth={true} duration={1200}>
+            Clientes
+          </ScrollLink>
         </li>
       </ul>
     </nav>
