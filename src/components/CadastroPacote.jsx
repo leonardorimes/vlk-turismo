@@ -2,6 +2,7 @@ import { useState } from "react";
 import Button from "./Button";
 import { insertCardData } from "../utils/bancoPacotes";
 import { useNavigate } from "react-router-dom"; // Certifique-se de importar o useNavigate
+import { useAuth } from "./AuthContext";
 
 function CadastroPacote() {
   const [formData, setFormData] = useState({

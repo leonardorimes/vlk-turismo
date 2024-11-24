@@ -10,8 +10,8 @@ function FormLogin() {
     password: "",
   });
 
-  const { login } = useAuth(); // Acessando a função login do contexto
   const navigate = useNavigate();
+  const { authUser, setAuthUser, isLoggedIn, setIsLoggedIn } = useAuth();
 
   function handleChange(e) {
     setFormData((prevFormData) => {
@@ -33,8 +33,11 @@ function FormLogin() {
       if (error) throw error; // Se houver erro, lança a exceção
 
       // Se o login for bem-sucedido, atualiza o estado de autenticação
-      login(user);
 
+      setIsLoggedIn(true);
+      setAuthUser({
+        name: formData.email,
+      });
       navigate("/tabelaPacotes"); // Redireciona para a página de pacotes após o login
     } catch (error) {
       alert(error.message); // Exibe o erro se ocorrer

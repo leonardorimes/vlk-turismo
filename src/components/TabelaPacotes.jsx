@@ -1,26 +1,32 @@
 import { useState, useEffect } from "react";
 import Button from "./Button";
-import { getCardData } from "../utils/bancoPacotes";
-import { deleteData } from "../utils/bancoPacotes";
-import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { getCardData, deleteData } from "../utils/bancoPacotes";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "./AuthContext";
 
 function TabelaPacotes() {
   const [pacotesNacionais, setPacotesNacionais] = useState([]);
   const [pacotesInternacionais, setPacotesInternacionais] = useState([]);
   const navigate = useNavigate();
+  const { isLoggedIn, logout } = useAuth();
 
   useEffect(() => {
     getCardData("false", setPacotesNacionais);
     getCardData("true", setPacotesInternacionais);
   }, []);
 
-  console.log("Nacionais:", pacotesNacionais);
-  console.log("Internacionais:", pacotesInternacionais);
-
-  function handleDelete(id) {
+  const handleDelete = (id) => {
     deleteData(id);
+    // Atualize os pacotes removendo o item deletado
+    setPacotesNacionais((prev) => prev.filter((pacote) => pacote.id !== id));
+    setPacotesInternacionais((prev) =>
+      prev.filter((pacote) => pacote.id !== id)
+    );
     navigate("/tabelaPacotes");
+  };
+
+  if (!isLoggedIn) {
+    return <div>Por favor, logue no sistema para acessar os pacotes.</div>;
   }
 
   return (
@@ -32,7 +38,7 @@ function TabelaPacotes() {
           to="/cadastroPacote"
           className="text-blue-500 underline ml-8 mt-2 flex items-center justify-center"
         >
-          novo pacote
+          Novo Pacote
         </Link>
       </h1>
       <table className="mt-7 w-[80%] mx-auto border-collapse border border-slate-400">
@@ -59,11 +65,11 @@ function TabelaPacotes() {
               </td>
             </tr>
           ) : (
-            pacotesNacionais.map((pacote, index) => (
-              <tr key={index}>
+            pacotesNacionais.map((pacote) => (
+              <tr key={pacote.id}>
                 <td className="border border-slate-400 p-2">
                   <img
-                    src={pacote.imagen}
+                    src={pacote.imagen || pacote.imagem}
                     alt={pacote.Destino}
                     className="w-16 h-16 object-cover"
                   />
@@ -93,10 +99,9 @@ function TabelaPacotes() {
           to="/cadastroPacote"
           className="text-blue-500 underline ml-8 mt-2 flex items-center justify-center"
         >
-          novo pacote
+          Novo Pacote
         </Link>
       </h1>
-
       <table className="mt-7 w-[80%] mx-auto border-collapse border border-slate-400">
         <thead className="bg-slate-500 text-slate-100 font-bold">
           <tr>
@@ -108,25 +113,43 @@ function TabelaPacotes() {
           </tr>
         </thead>
         <tbody>
-          {pacotesInternacionais.map((pacote, index) => (
-            <tr key={index}>
-              <td className="border border-slate-400 p-2">
-                <img
-                  src={pacote.imagen} // Supondo que a propriedade seja "imagen"
-                  alt={pacote.Destino}
-                  className="w-16 h-16 object-cover"
-                />
-              </td>
-              <td className="border border-slate-400 p-2">{pacote.Pacote}</td>
-              <td className="border border-slate-400 p-2">{pacote.Destino}</td>
-              <td className="border border-slate-400 p-2">R$ {pacote.Valor}</td>
-              <td className="border border-slate-400 p-2">
-                <Button onClick={() => deleteData(pacote.id)}>Excluir</Button>
+          {pacotesInternacionais.length === 0 ? (
+            <tr>
+              <td colSpan={5} className="text-center">
+                Não existem pacotes cadastrados.
               </td>
             </tr>
-          ))}
+          ) : (
+            pacotesInternacionais.map((pacote) => (
+              <tr key={pacote.id}>
+                <td className="border border-slate-400 p-2">
+                  <img
+                    src={pacote.imagen || pacote.imagem}
+                    alt={pacote.Destino}
+                    className="w-16 h-16 object-cover"
+                  />
+                </td>
+                <td className="border border-slate-400 p-2">{pacote.Pacote}</td>
+                <td className="border border-slate-400 p-2">
+                  {pacote.Destino}
+                </td>
+                <td className="border border-slate-400 p-2">
+                  R$ {pacote.Valor}
+                </td>
+                <td className="border border-slate-400 p-2">
+                  <Button onClick={() => handleDelete(pacote.id)}>
+                    Excluir
+                  </Button>
+                </td>
+              </tr>
+            ))
+          )}
         </tbody>
       </table>
+      <button className="absolute top-12 right-12" onClick={() => logout()}>
+        {" "}
+        Sair
+      </button>
     </>
   );
 }

@@ -1,5 +1,3 @@
-/*Embla Caarousel */
-
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
 import Home from "./components/Home";
@@ -7,6 +5,7 @@ import FormLogin from "./components/FormLogin";
 import CadastroPacote from "./components/CadastroPacote";
 import TabelaPacotes from "./components/TabelaPacotes";
 import { AuthProvider } from "./components/AuthContext";
+import ProtectedRoute from "./components/ProtectedRoute"; // Importando o componente de rota protegida
 
 function App() {
   return (
@@ -17,8 +16,23 @@ function App() {
             <Route index element={<Home />} />
             <Route path="login" element={<FormLogin />} />
 
-            <Route path="cadastroPacote" element={<CadastroPacote />} />
-            <Route path="tabelaPacotes" element={<TabelaPacotes />} />
+            {/* Rotas protegidas */}
+            <Route
+              path="cadastroPacote"
+              element={
+                <ProtectedRoute>
+                  <CadastroPacote />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="tabelaPacotes"
+              element={
+                <ProtectedRoute>
+                  <TabelaPacotes />
+                </ProtectedRoute>
+              }
+            />
           </Route>
         </Routes>
       </Router>
