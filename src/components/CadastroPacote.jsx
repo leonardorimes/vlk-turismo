@@ -3,6 +3,7 @@ import Button from "./Button";
 import { insertCardData } from "../utils/bancoPacotes";
 import { useNavigate } from "react-router-dom"; // Certifique-se de importar o useNavigate
 import { useAuth } from "./AuthContext";
+import BtnLogout from "./BtnLogout";
 
 function CadastroPacote() {
   const [formData, setFormData] = useState({
@@ -14,6 +15,7 @@ function CadastroPacote() {
   });
 
   const navigate = useNavigate(); // Inicializa o navigate
+  const { logout } = useAuth();
 
   const handleChange = (event) => {
     const { name, value, type, checked, files } = event.target;
@@ -122,6 +124,7 @@ function CadastroPacote() {
           Enviar
         </Button>
       </form>
+      <BtnLogout sair={logout}>Sair</BtnLogout>
     </div>
   );
 }

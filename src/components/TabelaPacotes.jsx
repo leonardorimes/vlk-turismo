@@ -3,6 +3,7 @@ import Button from "./Button";
 import { getCardData, deleteData } from "../utils/bancoPacotes";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "./AuthContext";
+import BtnLogout from "./BtnLogout";
 
 function TabelaPacotes() {
   const [pacotesNacionais, setPacotesNacionais] = useState([]);
@@ -146,10 +147,7 @@ function TabelaPacotes() {
           )}
         </tbody>
       </table>
-      <button className="absolute top-12 right-12" onClick={() => logout()}>
-        {" "}
-        Sair
-      </button>
+      <BtnLogout sair={logout}>Sair</BtnLogout>
     </>
   );
 }
