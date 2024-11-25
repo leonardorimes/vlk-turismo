@@ -1,8 +1,14 @@
+import { useState } from "react";
 import { IoClose, IoMenu } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import { Link as ScrollLink } from "react-scroll"; // Mudança aqui, para evitar conflito com o 'Link' do react-router-dom
 
-function NavBar({ menu, setCloseMenu, handleMenu }) {
+function NavBar() {
+  const [menu, setCloseMenu] = useState(false);
+
+  function handleMenu() {
+    setCloseMenu(!menu);
+  }
   return (
     <nav
       className={`flex ${

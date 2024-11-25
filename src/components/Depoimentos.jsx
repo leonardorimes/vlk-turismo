@@ -38,7 +38,7 @@ function Depoimentos() {
 
   return (
     <div
-      className="mt-32 flex w-full gap-6 z-[9999] justify-center items-center md:flex-col sm:flex-col lg:flex-row"
+      className="mt-32 flex w-full gap-6 z-[9999] justify-center items-center md:flex-col sm:flex-col lg:flex-row xs:flex-col"
       id="Clientes"
     >
       <div className="w-1/2">
