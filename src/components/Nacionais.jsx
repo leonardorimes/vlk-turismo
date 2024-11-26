@@ -58,7 +58,7 @@ function Nacionais() {
 
   return (
     <div className="mt-20">
-      <div className="grid place-items-center  sm:mt-[900px] lg:mt-[800px] xl:-mt-8 md:mt-[900px] xs:mt-[1100px]  w-full">
+      <div className="grid place-items-center  sm:mt-[100px] lg:mt-[800px] xl:-mt-8 md:mt-[100px] xs:mt-[100px]  w-full">
         <h1 className="text-4xl font-bold"> Destinos Nacionais</h1>
         <p className="text-center mt-4 w-[50%]">
           Descubra o melhor do Brasil! Do litoral paradisíaco às montanhas
