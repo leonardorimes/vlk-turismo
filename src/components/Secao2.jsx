@@ -27,19 +27,19 @@ function Secao2() {
           <CardBeneficiosVlk
             img="/public/destinos.png"
             title="Multiplos Destinos"
-            text="            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, inventore accusantium. Perspiciatis nisi beatae at error magnam tenetur aperiam consectetur necessitatibus exercitationem, recusandae quos repellat atque asperiores voluptatum temporibus vel!"
+            text=" Descubra o mundo de uma forma única e personalizada! Com nossos pacotes de múltiplos destinos, você pode explorar várias cidades ou países em uma única viagem, aproveitando ao máximo cada momento. Planejamos cada detalhe para que sua experiência seja incrível, conectando culturas, sabores e paisagens inesquecíveis. Sua aventura começa aqui!"
           />
 
           <CardBeneficiosVlk
             img="/public/user.png"
-            title="+ de 5.000 clientes"
-            text="            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, inventore accusantium. Perspiciatis nisi beatae at error magnam tenetur aperiam consectetur necessitatibus exercitationem, recusandae quos repellat atque asperiores voluptatum temporibus vel!"
+            title="+ de 5.000 viajantes "
+            text="Já realizamos o sonho de milhares de pessoas que desejavam explorar o mundo! Com mais de 5.000 clientes atendidos, oferecemos experiências únicas e planejamos cada detalhe da sua viagem para que ela seja inesquecível. Confie na nossa expertise e comece a planejar sua próxima aventura hoje mesmo! ✈️"
           />
 
           <CardBeneficiosVlk
             img="/public/confianca.png"
             title="Certificada"
-            text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, inventore accusantium. Perspiciatis nisi beatae at error magnam tenetur aperiam consectetur necessitatibus exercitationem, recusandae quos repellat atque asperiores voluptatum temporibus vel!"
+            text="Viaje com total confiança! garantimos segurança, qualidade e transparência em todos os serviços. Com anos de experiência e reconhecimento no mercado, estamos prontos para oferecer as melhores soluções e tornar sua viagem inesquecível"
           />
         </div>
       </div>

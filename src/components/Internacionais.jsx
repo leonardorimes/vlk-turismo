@@ -63,10 +63,11 @@ function Internacionais() {
       <div className="grid place-items-center">
         <h1 className="text-4xl font-bold ">Destinos Internacionais</h1>
         <p className="text-center mt-4 w-[50%]">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta, amet
-          vel. Doloremque maiores voluptatem consequatur enim suscipit dolor,
-          quasi fugiat id corporis, in, commodi ad tempora sapiente! Nostrum,
-          blanditiis! Sint!
+          Explore o mundo com quem entende de viagens! Oferecemos uma ampla
+          variedade de destinos internacionais para você descobrir novas
+          culturas, paisagens incríveis e experiências inesquecíveis. Seja uma
+          viagem romântica, em família ou uma aventura solo, nós cuidamos de
+          tudo para que você apenas aproveite. O mundo está te esperando!
         </p>
       </div>
       <div className="mt-16">
