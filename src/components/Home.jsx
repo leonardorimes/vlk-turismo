@@ -7,6 +7,7 @@ import Internacionais from "./Internacionais";
 import Nacionais from "./Nacionais";
 import Depoimentos from "./Depoimentos";
 import Whats from "./whats";
+import imgHome from "../assets/images/IMG-HOME.png";
 
 function Home() {
   return (
@@ -35,7 +36,7 @@ function Home() {
                 Explorar Destinos
               </Button>
             </div>
-            <img src="../public/IMG-HOME.png" alt="" />
+            <img src={imgHome} alt="" />
           </div>
         </div>
       </div>
