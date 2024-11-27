@@ -14,7 +14,7 @@ function Nacionais() {
     slidesToShow: 3,
     slidesToScroll: 1,
     initialSlide: 0,
-    arrows: false,
+    arrows: true,
 
     responsive: [
       {
@@ -30,10 +30,11 @@ function Nacionais() {
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 2,
           slidesToScroll: 1,
           initialSlide: 2,
           dots: false,
+          arrows: true,
         },
       },
       {
@@ -43,6 +44,7 @@ function Nacionais() {
           slidesToScroll: 1,
           initialSlide: 2,
           dots: false,
+          arrows: true,
         },
       },
     ],
@@ -54,67 +56,16 @@ function Nacionais() {
     getCardData("false", setCardData);
   }, []);
 
-  // Dados dos cartões
-  // const cardData = [
-  //   {
-  //     title: "Rio",
-  //     subtitle: "Rio de Janeiro",
-  //     price: "R$ 2.500,00",
-  //     img: "../public/rio.jpeg",
-  //   },
-  //   {
-  //     title: "Rio",
-  //     subtitle: "Rio de Janeiro",
-  //     price: "R$ 2.500,00",
-  //     img: "../public/rio.jpeg",
-  //   },
-  //   {
-  //     title: "Rio",
-  //     subtitle: "Rio de Janeiro",
-  //     price: "R$ 2.500,00",
-  //     img: "../public/rio.jpeg",
-  //   },
-  //   {
-  //     title: "Rio",
-  //     subtitle: "Rio de Janeiro",
-  //     price: "R$ 2.500,00",
-  //     img: "../public/rio.jpeg",
-  //   },
-  //   {
-  //     title: "Rio",
-  //     subtitle: "Rio de Janeiro",
-  //     price: "R$ 2.500,00",
-  //     img: "../public/rio.jpeg",
-  //   },
-  //   {
-  //     title: "Rio",
-  //     subtitle: "Rio de Janeiro",
-  //     price: "R$ 2.500,00",
-  //     img: "../public/rio.jpeg",
-  //   },
-  //   {
-  //     title: "Rio",
-  //     subtitle: "Rio de Janeiro",
-  //     price: "R$ 2.500,00",
-  //     img: "../public/rio.jpeg",
-  //   },
-  //   {
-  //     title: "Rio",
-  //     subtitle: "Rio de Janeiro",
-  //     price: "R$ 2.500,00",
-  //     img: "../public/rio.jpeg",
-  //   },
-  // ];
-
   return (
-    <div className="mt-20" >
-      <div className="grid place-items-center">
+    <div className="mt-20">
+      <div className="grid place-items-center  sm:mt-[100px] lg:mt-[800px] xl:-mt-8 md:mt-[100px] xs:mt-[100px]  w-full">
         <h1 className="text-4xl font-bold"> Destinos Nacionais</h1>
         <p className="text-center mt-4 w-[50%]">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta, amet
-          vel. Doloremque maiores voluptatem consequatur enim suscipit dolor,
-          quasi fugiat id corporis, in, commodi ad tempora sapiente! Nostrum,
-          blanditiis! Sint!
+          Descubra o melhor do Brasil! Do litoral paradisíaco às montanhas
+          encantadoras, oferecemos pacotes completos para os destinos mais
+          incríveis do país. Conheça culturas diversas, sabores únicos e
+          paisagens de tirar o fôlego, tudo com o conforto e a segurança que
+          você merece. Sua próxima viagem está aqui, pertinho de você!
         </p>
       </div>
       <div className="mt-16 ">
