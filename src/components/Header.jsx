@@ -4,7 +4,7 @@ function Header({ menu, setCloseMenu, handleMenu }) {
   return (
     <header className="w-[80%] mx-auto my-0 overflow-hidden">
       <img
-        src="../public/VLK.png"
+        src="./public/VLK.png"
         alt="logomarca VLK"
         className="w-36 absolute top-10 left-15 "
       />
