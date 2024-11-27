@@ -1,4 +1,7 @@
 import CardBeneficiosVlk from "./CardBeneficiosVlk";
+import destinos from "../assets/images/destinos.png";
+import user from "../assets/images/user.png";
+import confianca from "../assets/images/confianca.png";
 
 function Secao2() {
   return (
@@ -25,19 +28,19 @@ function Secao2() {
         </div>
         <div className="flex flex-col sm:flex-col md:flex-col xl:flex-row mt-14 gap-20">
           <CardBeneficiosVlk
-            img="/public/destinos.png"
+            img={destinos}
             title="Multiplos Destinos"
             text=" Descubra o mundo de uma forma única e personalizada! Com nossos pacotes de múltiplos destinos, você pode explorar várias cidades ou países em uma única viagem, aproveitando ao máximo cada momento. Planejamos cada detalhe para que sua experiência seja incrível, conectando culturas, sabores e paisagens inesquecíveis. Sua aventura começa aqui!"
           />
 
           <CardBeneficiosVlk
-            img="/public/user.png"
+            img={user}
             title="+ de 5.000 viajantes "
             text="Já realizamos o sonho de milhares de pessoas que desejavam explorar o mundo! Com mais de 5.000 clientes atendidos, oferecemos experiências únicas e planejamos cada detalhe da sua viagem para que ela seja inesquecível. Confie na nossa expertise e comece a planejar sua próxima aventura hoje mesmo! ✈️"
           />
 
           <CardBeneficiosVlk
-            img="/public/confianca.png"
+            img={confianca}
             title="Certificada"
             text="Viaje com total confiança! garantimos segurança, qualidade e transparência em todos os serviços. Com anos de experiência e reconhecimento no mercado, estamos prontos para oferecer as melhores soluções e tornar sua viagem inesquecível"
           />
