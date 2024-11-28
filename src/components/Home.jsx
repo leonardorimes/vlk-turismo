@@ -20,7 +20,7 @@ function Home() {
               <IoSearch /> Buscar
             </Button> */}
           </div>
-          <div className="flex xs:flex-col-reverse sm:flex-col-reverse  md:flex-col-reverse lg:flex-row sm:items-center  justify-center gap-24 mt-28 w-full">
+          <div className="flex xs:flex-col-reverse sm:flex-col-reverse  md:flex-col-reverse lg:flex-row sm:items-center  justify-center gap-24 mt-28 mx-0 w-full">
             <div className="lg:w-[450px] md:w-[250px] sm:w-[250px] xs:w-[250px]">
               <h1 className="text-4xl font-bold mb-6">
                 Descubra o mundo com a VLK!

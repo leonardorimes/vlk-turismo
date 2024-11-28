@@ -57,7 +57,7 @@ function Internacionais() {
 
   return (
     <div
-      className=" sm:mt-[700px] lg:mt-[800px] xl:-mt-8 md:mt-[600px] xs:mt-[800px]  w-full"
+      className="sm:mt-[900px] lg:mt-[750px] xl:mt-24 md:mt-[700px] xs:mt-[1000px]"
       id="Pacotes"
     >
       <div className="grid place-items-center">
