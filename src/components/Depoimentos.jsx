@@ -2,26 +2,30 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+import lanara from "../assets/images/lanara.png";
+import luana from "../assets/images/luana.jpg";
+import alex from "../assets/images/alex.png";
+
 function Depoimentos() {
   // Array de objetos contendo as informações dos depoimentos
   const depoimentos = [
     {
-      nome: "Leonardo Rimes",
-      imagem: "../public/leo.jpg",
+      nome: "Lanara Mello",
+      imagem: lanara,
       opiniao:
-        "Lorem ipsum dolor sit amet consectetur. Aliquet malesuada tellus viverra ultricies egestas sociis gravida sem. Enim elit massa ullamcorper erat.",
+        "Uma empresa maravilhosa que trata seus clientes com carinho e com muito cuidado. Sempre estão dispostos a te oferecer uma experiência única de viagem!",
     },
     {
-      nome: "Joana Souza",
-      imagem: "https://mighty.tools/mockmind-api/content/human/52.jpg",
+      nome: "Luana Vaz",
+      imagem: luana,
       opiniao:
-        "Lorem ipsum dolor sit amet consectetur. Aliquet malesuada tellus viverra ultricies egestas sociis gravida sem. Enim elit massa ullamcorper erat.",
+        "Sobre a experiência, a melhor possível! A Valeska e equipe são sensacionais… amo viajar com ela. Tornou-se uma amiga, sempre que posso vou nas viagens 😊",
     },
     {
-      nome: "Maria Esther",
-      imagem: "https://mighty.tools/mockmind-api/content/human/51.jpg",
+      nome: "Alex Barros",
+      imagem: alex,
       opiniao:
-        "Lorem ipsum dolor sit amet consectetur. Aliquet malesuada tellus viverra ultricies egestas sociis gravida sem. Enim elit massa ullamcorper erat.",
+        "Muito bom super recomendo,  trabalham muito bem , adorei o passeio com esta empresa , cumpriu tudo q prometeu. Viagem super tranquila nota 1000",
     },
   ];
 
