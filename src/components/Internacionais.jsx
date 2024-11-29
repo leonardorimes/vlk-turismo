@@ -13,7 +13,7 @@ function Internacionais() {
     slidesToShow: 3,
     slidesToScroll: 1,
     initialSlide: 0,
-    arrows: true,
+    arrow: true,
 
     responsive: [
       {
@@ -23,7 +23,15 @@ function Internacionais() {
           slidesToScroll: 1,
           infinite: true,
           initialSlide: 1,
-          dots: false,
+        },
+      },
+      {
+        breakpoint: 950,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          initialSlide: 1,
         },
       },
       {
@@ -32,8 +40,6 @@ function Internacionais() {
           slidesToShow: 1,
           slidesToScroll: 1,
           initialSlide: 2,
-          dots: false,
-          arrows: true,
         },
       },
       {
@@ -42,8 +48,6 @@ function Internacionais() {
           slidesToShow: 1,
           slidesToScroll: 1,
           initialSlide: 2,
-          dots: false,
-          arrows: true,
         },
       },
     ],

@@ -14,7 +14,7 @@ function Nacionais() {
     slidesToShow: 3,
     slidesToScroll: 1,
     initialSlide: 0,
-    arrows: true,
+    arrow: true,
 
     responsive: [
       {
@@ -24,17 +24,23 @@ function Nacionais() {
           slidesToScroll: 1,
           infinite: true,
           initialSlide: 1,
-          dots: false,
+        },
+      },
+      {
+        breakpoint: 950,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          initialSlide: 1,
         },
       },
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 1,
           slidesToScroll: 1,
           initialSlide: 2,
-          dots: false,
-          arrows: true,
         },
       },
       {
@@ -43,8 +49,6 @@ function Nacionais() {
           slidesToShow: 1,
           slidesToScroll: 1,
           initialSlide: 2,
-          dots: false,
-          arrows: true,
         },
       },
     ],

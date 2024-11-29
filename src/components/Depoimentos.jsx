@@ -54,7 +54,7 @@ function Depoimentos() {
           qualidade garantidas para atender às suas necessidades com excelência.
         </p>
       </div>
-      <div className="slider-container w-[700px] md:w-[400px] lg:w-[600px] sm:w-[400px] xs:w-[400px]">
+      <div className="slider-container w-[700px] md:w-[400px] lg:w-[600px] sm:w-[400px] xs:w-[300px]">
         <Slider {...settings} className="h-full">
           {depoimentos.map((depoimento, index) => (
             <div
