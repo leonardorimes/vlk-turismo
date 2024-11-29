@@ -83,7 +83,7 @@ function CadastroPacote() {
           />
         </label>
 
-        <label className="w-[80%] flex gap-5 items-center justify-center">
+        <label className="w-[80%] flex gap-5 items-center justify-center xs:w-full">
           <span className="text-2xl text-yellow-500 font-bold">Valor :</span>
           <input
             type="number"
