@@ -54,7 +54,7 @@ function Depoimentos() {
           qualidade garantidas para atender às suas necessidades com excelência.
         </p>
       </div>
-      <div className="slider-container w-[600px] ">
+      <div className="slider-container w-[700px] md:w-[400px] lg:w-[600px]">
         <Slider {...settings} className="h-full">
           {depoimentos.map((depoimento, index) => (
             <div
@@ -64,11 +64,13 @@ function Depoimentos() {
               <img
                 src={depoimento.imagem}
                 alt={depoimento.nome}
-                className="w-40 rounded-full absolute right-20 top-[50px]"
+                className="w-40 rounded-full absolute right-20 top-[50px] md:top-[150px] md:right-10 md:w-32"
               />
               <div className="flex flex-col gap-3 w-[50%]">
-                <div className="bg-slate-50 rounded-full py-2 text-xl w-50 self-start">
-                  <span className="center mx-8">{depoimento.nome}</span>
+                <div className="bg-slate-50 rounded-full py-2 text-xl w-50 self-start md:w-60">
+                  <span className="center mx-8 md:mx-14">
+                    {depoimento.nome}
+                  </span>
                 </div>
                 <p>{depoimento.opiniao}</p>
               </div>
