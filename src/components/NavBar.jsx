@@ -58,6 +58,11 @@ function NavBar() {
             Clientes
           </ScrollLink>
         </li>
+        <li className="mx-4 my-6 md:my-0 cursor-pointer">
+          <li className="mx-4 my-6 md:my-0 cursor-pointer">
+            <Link to="/login">Login</Link>
+          </li>
+        </li>
       </ul>
     </nav>
   );
