@@ -41,26 +41,45 @@ function NavBar() {
         } transition-all ease-in duration-500 md:opacity-100 md:top-0 md:relative`}
       >
         <li className="mx-4 my-6 md:my-0 cursor-pointer">
-          <Link to="/">Inicio</Link>
+          <Link to="/" onClick={handleMenu}>
+            Inicio
+          </Link>
         </li>
         <li className="mx-4 my-6 md:my-0 cursor-pointer">
-          <ScrollLink to="secao2" smooth={true} duration={800}>
+          <ScrollLink
+            onClick={handleMenu}
+            to="secao2"
+            smooth={true}
+            duration={800}
+          >
             Destinos
           </ScrollLink>
         </li>
         <li className="mx-4 my-6 md:my-0 cursor-pointer">
-          <ScrollLink to="Pacotes" smooth={true} duration={1000}>
+          <ScrollLink
+            onClick={handleMenu}
+            to="Pacotes"
+            smooth={true}
+            duration={1000}
+          >
             Pacotes
           </ScrollLink>
         </li>
         <li className="mx-4 my-6 md:my-0 cursor-pointer">
-          <ScrollLink to="Clientes" smooth={true} duration={1200}>
+          <ScrollLink
+            onClick={handleMenu}
+            to="Clientes"
+            smooth={true}
+            duration={1200}
+          >
             Clientes
           </ScrollLink>
         </li>
         <li className="mx-4 my-6 md:my-0 cursor-pointer">
           <li className="mx-4 my-6 md:my-0 cursor-pointer">
-            <Link to="/login">Login</Link>
+            <Link onClick={handleMenu} to="/login">
+              Login
+            </Link>
           </li>
         </li>
       </ul>
