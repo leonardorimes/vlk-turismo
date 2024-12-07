@@ -9,6 +9,7 @@ function NavBar() {
   function handleMenu() {
     setCloseMenu(!menu);
   }
+
   return (
     <nav
       className={`flex ${
@@ -41,13 +42,13 @@ function NavBar() {
         } transition-all ease-in duration-500 md:opacity-100 md:top-0 md:relative`}
       >
         <li className="mx-4 my-6 md:my-0 cursor-pointer">
-          <Link to="/" onClick={handleMenu}>
+          <Link to="/" onClick={menu ? handleMenu : undefined}>
             Inicio
           </Link>
         </li>
         <li className="mx-4 my-6 md:my-0 cursor-pointer">
           <ScrollLink
-            onClick={handleMenu}
+            onClick={menu ? handleMenu : undefined}
             to="secao2"
             smooth={true}
             duration={800}
@@ -57,7 +58,7 @@ function NavBar() {
         </li>
         <li className="mx-4 my-6 md:my-0 cursor-pointer">
           <ScrollLink
-            onClick={handleMenu}
+            onClick={menu ? handleMenu : undefined}
             to="Pacotes"
             smooth={true}
             duration={1000}
@@ -67,7 +68,7 @@ function NavBar() {
         </li>
         <li className="mx-4 my-6 md:my-0 cursor-pointer">
           <ScrollLink
-            onClick={handleMenu}
+            onClick={menu ? handleMenu : undefined}
             to="Clientes"
             smooth={true}
             duration={1200}
@@ -76,11 +77,9 @@ function NavBar() {
           </ScrollLink>
         </li>
         <li className="mx-4 my-6 md:my-0 cursor-pointer">
-          <li className="mx-4 my-6 md:my-0 cursor-pointer">
-            <Link onClick={handleMenu} to="/login">
-              Login
-            </Link>
-          </li>
+          <Link onClick={menu ? handleMenu : undefined} to="/login">
+            Login
+          </Link>
         </li>
       </ul>
     </nav>
