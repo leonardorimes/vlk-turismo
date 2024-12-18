@@ -8,8 +8,8 @@ import BtnLogout from "./BtnLogout";
 function CadastroPacote() {
   const [formData, setFormData] = useState({
     pacote: "",
-    destino: "",
-    valor: "",
+    destino: null,
+    valor: null,
     imagem: null,
     internacional: false,
   });
@@ -71,7 +71,7 @@ function CadastroPacote() {
           />
         </label>
 
-        <label className="w-[80%] flex gap-5 items-center justify-center">
+        {/* <label className="w-[80%] flex gap-5 items-center justify-center">
           <span className="text-2xl text-yellow-500 font-bold">Destino :</span>
           <input
             type="text"
@@ -93,7 +93,7 @@ function CadastroPacote() {
             value={formData.valor}
             onChange={handleChange}
           />
-        </label>
+        </label> */}
 
         <label className="w-[80%] flex gap-5 items-center justify-center">
           <span className="text-2xl text-yellow-500 font-bold">Imagem:</span>

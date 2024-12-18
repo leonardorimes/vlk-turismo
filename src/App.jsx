@@ -6,6 +6,7 @@ import CadastroPacote from "./components/CadastroPacote";
 import TabelaPacotes from "./components/TabelaPacotes";
 import { AuthProvider } from "./components/AuthContext";
 import ProtectedRoute from "./components/ProtectedRoute"; // Importando o componente de rota protegida
+import ExternalPage from "./components/ExternalPage"; // Certifique-se de importar o componente
 
 function App() {
   return (
@@ -31,6 +32,14 @@ function App() {
                 <ProtectedRoute>
                   <TabelaPacotes />
                 </ProtectedRoute>
+              }
+            />
+
+            {/* Nova rota para página externa */}
+            <Route
+              path="vlkturismo"
+              element={
+                <ExternalPage url="https://www.comprarviagem.com.br/vlkturismo" />
               }
             />
           </Route>

@@ -47,6 +47,11 @@ function NavBar() {
           </Link>
         </li>
         <li className="mx-4 my-6 md:my-0 cursor-pointer">
+          <Link to="/vlkturismo" onClick={menu ? handleMenu : undefined}>
+            Compre sua passagem
+          </Link>
+        </li>
+        <li className="mx-4 my-6 md:my-0 cursor-pointer">
           <ScrollLink
             onClick={menu ? handleMenu : undefined}
             to="secao2"
