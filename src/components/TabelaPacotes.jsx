@@ -8,22 +8,24 @@ import BtnLogout from "./BtnLogout";
 function TabelaPacotes() {
   const [pacotesNacionais, setPacotesNacionais] = useState([]);
   const [pacotesInternacionais, setPacotesInternacionais] = useState([]);
-  const navigate = useNavigate();
+
   const { isLoggedIn, logout } = useAuth();
+  console.log(isLoggedIn);
 
   useEffect(() => {
     getCardData("false", setPacotesNacionais);
     getCardData("true", setPacotesInternacionais);
   }, []);
 
-  const handleDelete = (id) => {
+  const handleDelete = (id, event) => {
+    event.preventDefault(); // Impede qualquer comportamento padrão do evento
+
     deleteData(id);
     // Atualize os pacotes removendo o item deletado
     setPacotesNacionais((prev) => prev.filter((pacote) => pacote.id !== id));
     setPacotesInternacionais((prev) =>
       prev.filter((pacote) => pacote.id !== id)
     );
-    navigate("/tabelaPacotes");
   };
 
   if (!isLoggedIn) {
@@ -83,7 +85,7 @@ function TabelaPacotes() {
                   R$ {pacote.Valor}
                 </td>
                 <td className="border border-slate-400 p-2">
-                  <Button onClick={() => handleDelete(pacote.id)}>
+                  <Button onClick={(event) => handleDelete(pacote.id, event)}>
                     Excluir
                   </Button>
                 </td>
@@ -138,7 +140,7 @@ function TabelaPacotes() {
                   R$ {pacote.Valor}
                 </td>
                 <td className="border border-slate-400 p-2">
-                  <Button onClick={() => handleDelete(pacote.id)}>
+                  <Button onClick={(event) => handleDelete(pacote.id, event)}>
                     Excluir
                   </Button>
                 </td>

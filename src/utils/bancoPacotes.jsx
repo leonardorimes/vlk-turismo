@@ -83,7 +83,6 @@ export async function deleteData(Pacoteid) {
       .from("pacotes") // Verifique o nome exato da tabela no Supabase
       .delete()
       .eq("id", Pacoteid);
-    resetPage();
 
     if (error) {
       console.error("Erro ao deletar:", error.message);

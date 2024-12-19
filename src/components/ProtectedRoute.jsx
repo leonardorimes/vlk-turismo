@@ -3,6 +3,7 @@ import { useAuth } from "./AuthContext";
 
 function ProtectedRoute({ children }) {
   const { isLoggedIn } = useAuth();
+  console.log(isLoggedIn);
 
   // Se o usuário não estiver logado, redirecione para a página de login
   if (!isLoggedIn) {
