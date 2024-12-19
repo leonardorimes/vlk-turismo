@@ -10,6 +10,7 @@ function Internacionais() {
     dots: true,
     infinite: true,
     speed: 200,
+
     slidesToShow: 3,
     slidesToScroll: 1,
     initialSlide: 0,

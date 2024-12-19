@@ -10,7 +10,7 @@ function Depoimentos() {
   // Array de objetos contendo as informações dos depoimentos
   const depoimentos = [
     {
-      nome: "Lanara Mello",
+      nome: "Ianara Mello",
       imagem: lanara,
       opiniao:
         "Uma empresa maravilhosa que trata seus clientes com carinho e com muito cuidado. Sempre estão dispostos a te oferecer uma experiência única de viagem!",

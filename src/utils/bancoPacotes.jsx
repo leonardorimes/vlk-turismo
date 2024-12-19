@@ -92,7 +92,6 @@ export async function deleteData(Pacoteid) {
     }
 
     alert("Pacote deletado com sucesso!");
-    console.log("Dados deletados:", data);
   } catch (error) {
     console.error("Erro inesperado:", error);
   }

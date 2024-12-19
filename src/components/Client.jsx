@@ -1,6 +1,8 @@
 import { createClient } from "@supabase/supabase-js";
 
-const supabaseUrl = "https://laawkfzemxcsdphxrnda.supabase.co";
-const supabaseKey =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxhYXdrZnplbXhjc2RwaHhybmRhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzIxMDgzNzAsImV4cCI6MjA0NzY4NDM3MH0.LomsFC_0BU6DcNhy-_WlZAC4_SlDmlV_87ZxCegyqus";
+// Acessando as variáveis de ambiente do Vite
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+const supabaseKey = import.meta.env.VITE_SUPABASE_KEY;
+
+// Criando a instância do Supabase
 export const supabase = createClient(supabaseUrl, supabaseKey);
