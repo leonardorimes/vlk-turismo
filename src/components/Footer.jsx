@@ -14,7 +14,10 @@ function Footer() {
             <AiFillInstagram className="text-green-900 text-2xl" />
           </a>
 
-          <a href="">
+          <a
+            href="https://www.facebook.com/vlkturismo/?locale=pt_BR"
+            target="_blank"
+          >
             <FaFacebook className="text-green-900 text-2xl" />
           </a>
         </div>

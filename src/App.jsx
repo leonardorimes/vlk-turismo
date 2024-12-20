@@ -37,9 +37,9 @@ function App() {
 
             {/* Nova rota para página externa */}
             <Route
-              path="vlkturismo"
+              path="passagem"
               element={
-                <ExternalPage url="https://www.comprarviagem.com.br/vlkturismo" />
+                <ExternalPage url="https://www.comprarviagem.com.br/vlkturismo/home" />
               }
             />
           </Route>
