@@ -1,14 +1,17 @@
 import { useState } from "react";
 import { IoClose, IoMenu } from "react-icons/io5";
-import { Link } from "react-router-dom";
-import { Link as ScrollLink } from "react-scroll"; // Mudança aqui, para evitar conflito com o 'Link' do react-router-dom
+import { Link, useLocation } from "react-router-dom";
+import { Link as ScrollLink } from "react-scroll";
 
 function NavBar() {
   const [menu, setCloseMenu] = useState(false);
+  const location = useLocation(); // Hook para obter a localização atual
 
   function handleMenu() {
     setCloseMenu(!menu);
   }
+
+  const isInicioPage = location.pathname === "/"; // Verifica se está na página "Início"
 
   return (
     <nav
@@ -51,41 +54,40 @@ function NavBar() {
             Compre sua passagem
           </Link>
         </li>
-        <li className="mx-4 my-6 md:my-0 cursor-pointer">
-          <ScrollLink
-            onClick={menu ? handleMenu : undefined}
-            to="secao2"
-            smooth={true}
-            duration={800}
-          >
-            Destinos
-          </ScrollLink>
-        </li>
-        <li className="mx-4 my-6 md:my-0 cursor-pointer">
-          <ScrollLink
-            onClick={menu ? handleMenu : undefined}
-            to="Pacotes"
-            smooth={true}
-            duration={1000}
-          >
-            Pacotes
-          </ScrollLink>
-        </li>
-        <li className="mx-4 my-6 md:my-0 cursor-pointer">
-          <ScrollLink
-            onClick={menu ? handleMenu : undefined}
-            to="Clientes"
-            smooth={true}
-            duration={1200}
-          >
-            Clientes
-          </ScrollLink>
-        </li>
-        <li className="mx-4 my-6 md:my-0 cursor-pointer">
-          <Link onClick={menu ? handleMenu : undefined} to="/login">
-            Login
-          </Link>
-        </li>
+        {isInicioPage && ( // Renderiza apenas se estiver na página "Início"
+          <>
+            <li className="mx-4 my-6 md:my-0 cursor-pointer">
+              <ScrollLink
+                onClick={menu ? handleMenu : undefined}
+                to="secao2"
+                smooth={true}
+                duration={800}
+              >
+                Destinos
+              </ScrollLink>
+            </li>
+            <li className="mx-4 my-6 md:my-0 cursor-pointer">
+              <ScrollLink
+                onClick={menu ? handleMenu : undefined}
+                to="Pacotes"
+                smooth={true}
+                duration={1000}
+              >
+                Pacotes
+              </ScrollLink>
+            </li>
+            <li className="mx-4 my-6 md:my-0 cursor-pointer">
+              <ScrollLink
+                onClick={menu ? handleMenu : undefined}
+                to="Clientes"
+                smooth={true}
+                duration={1200}
+              >
+                Clientes
+              </ScrollLink>
+            </li>
+          </>
+        )}
       </ul>
     </nav>
   );

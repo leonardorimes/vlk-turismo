@@ -4,7 +4,7 @@ function Whats() {
   return (
     <a
       href="https://wa.me/5522999617271"
-      className="w-full fixed top-5    mx-3 pointer"
+      className="w-36 fixed top-5    mx-3 pointer"
       target="blank"
     >
       <RiWhatsappFill className="w-8 h-16 text-green-600 rounded-full cursor-pointer " />
