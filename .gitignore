@@ -26,3 +26,7 @@ dist-ssr
 
 # Ignorar o arquivo .env com variáveis de ambiente
 .env
+
+# Arquivos zip de distribuição
+dist.zip
+*.zip
